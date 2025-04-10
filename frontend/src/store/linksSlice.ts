@@ -14,7 +14,7 @@ const initialState: LinksState = {
 }
 
 export const selectLink = (state: RootState) => state.links.link;
-export const loading = (state: RootState) => state.links.loading;
+export const selectLoading = (state: RootState) => state.links.loading;
 
 const linksSlice = createSlice({
     name: "links",
