@@ -3,6 +3,7 @@ import LinksForm from "./components/LinksForm/LinksForm.tsx";
 import {useAppSelector} from "./app/hooks.ts";
 import {selectLink} from "./store/linksSlice.ts";
 import {Container, Link, Typography, Grid, Box} from "@mui/material";
+import {baseURL} from "./globalConstants.ts";
 
 const App = () => {
     const link = useAppSelector(selectLink);
@@ -12,7 +13,7 @@ const App = () => {
         content = (
             <>
                 <p style={{textAlign: "center", color: "#fff5f9"}}>Your link now looks like this:</p>
-                <Link href={link.originalUrl} target="_blank">
+                <Link href={baseURL + link.shortUrl} target="_blank">
                     http://localhost:8000/{link.shortUrl}
                 </Link>
             </>
